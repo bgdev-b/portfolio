@@ -13,56 +13,41 @@ interface TechStack {
    frontend: string[];
 };
 
-type ContactType = 'github' | 'twitter' | 'linkedIn' | 'xing' | 'email';
+type ContactType = 'github' | 'email';
 
 const techStack: TechStack = {
     devOps: [
-        'GitLab',
-        'GitHub',
-        'Cloudflare',
-        'Docker'
+        'Git'
     ],
     frontend: [
-        'Angular',
         'JavaScript',
         'TypeScript',
-        'TailwindCSS',
-        'PrimeNG',
-        'Astro',
-        'Ionic',
-        'Stencil',
-        'Capacitor',
-        'SCSS',
-        'Markdown',
-        'WordPress'
+        'HTML',
+        'CSS'
     ],
     backend: [
-        'Supabase',
         'Node.js',
-        'Bun',
-        'Deno',
-        'PostgreSQL',
-        'MySQL',
-        'S3 Storage',
-        'Resend'
+        'Express.js',
+        'Python',
+        'PHP',
+        'MySQL'
     ]
 };
 
 // Developer profile
 const me: Developer = {
-    name: 'Dejan Vi.',
+    name: 'Bryant Guerrero',
     skills: [
         ...techStack.devOps,
         ...techStack.backend,
         ...techStack.frontend
     ],
     interests: [
-        'Open Source',
-        'Security',
-        'Privacy',
-        'Performance',
-        'Self-Hosting',
-        'Networking'
+        'Backend Development',
+        'Full-Stack Web Development',
+        'REST API Architecture',
+        'System Design',
+        'Software Architecture'
     ]
 };
 
@@ -70,15 +55,9 @@ const me: Developer = {
 const contact = (type: ContactType): string => {
     switch (type) {
         case 'github':
-            return 'https://github.com/devidevio';
-        case 'twitter':
-            return 'https://x.com/devidev_io';
-        case 'linkedIn':
-            return 'https://www.linkedin.com/in/dejan-vi';
-        case 'xing':
-            return 'https://www.xing.com/profile/Dejan_Vintonjiv';
+            return 'https://github.com/bgdev-b';
         case 'email':
-            return 'hi@devidev.io';
+            return 'bryantgh1984@outlook.es';
         default:
             return 'Send fax.';
     }

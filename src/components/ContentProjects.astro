@@ -2,6 +2,7 @@
 interface Project {
     name: string;
     description: string;
+    github?: string;
     link: {
         url?: string;
         target?: string;
@@ -11,22 +12,18 @@ interface Project {
 };
 
 const projects: Project[] = [{
-    name: 'Papersend.io',
-    description: 'Papersend is the free alternative to DocSend for secure document sharing, tracking, and Data Rooms. Customize branding, control access, and protect your documents.',
+    name: 'Appointments Manager',
+    description: 'Full-stack appointment management system designed to handle scheduling, state management, rescheduling flows, and business rules through a structured layered architecture and REST API approach.',
+    github: 'https://github.com/bgdev-b/appointments-manager-full',
     link: {
-        url: 'https://papersend.io/',
+        url: 'https://appointments-manager-full.vercel.app/appointments',
     }
 }, {
-    name: 'Qivi.io',
-    description: 'Qivi is an all-in-one application designed to streamline business operations, enhance productivity, and maximize success. Data security is a priority.',
+    name: 'Operations Planner',
+    description: 'Full-stack operations and scheduling management system focused on structured workflows, task organization, business logic handling, and scalable backend architecture through a layered REST API design.',
+    github: 'https://github.com/bgdev-b/operation-planner',
     link: {
-        url: 'https://qivi.io/'
-    }
-}, {
-    name: 'TECHPOINT.de',
-    description: 'TECHPOINT is a local IT service provider based in the Starnberg district and the Fünfseenland region, specializing in delivering reliable and modern IT solutions.',
-    link: {
-        url: 'https://techpoint.de/'
+        url: 'https://operation-planner-s4px0n51h-bgdev-bs-projects.vercel.app/resources',
     }
 }];
 ---
@@ -64,6 +61,26 @@ const projects: Project[] = [{
                                 hover:border-primary
                             ">
                             {project.link.buttonLabel || 'Open Project Website'}
+                        </a>
+                    : null
+                }
+
+                {
+                    project.github ?
+                        <a
+                            href={project.github}
+                            title={'View source code for ' + project.name}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="
+                                w-full px-4 py-2.5 mt-2 text-center
+
+                                border border-gray-700 rounded-lg text-gray-400
+
+                                hover:text-primary
+                                hover:border-primary
+                            ">
+                            View on GitHub
                         </a>
                     : null
                 }
